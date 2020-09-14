@@ -7,8 +7,9 @@ const bcrypt=require('bcrypt');
 const project = require('../models/project');
 app.get("/project", async (req, res) => {
     Project.find({})
-    
-    
+  // select * from project    
+    //a  n   
+    //b m
     .then(projects => {
         res.status(200).json({
             message: projects

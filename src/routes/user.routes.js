@@ -45,6 +45,7 @@ app.post('/user/register', function(req, res) {
 
 
     })
+   ///insert into sql
     user.save((err,usuarioDB)=>{
         if (err) {
             return res.status(400).json({
