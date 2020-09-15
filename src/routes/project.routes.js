@@ -76,11 +76,22 @@ app.get('/project/:id', function(req, res) {
     })
     
 });
-app.get('/user/:id',async (req,res)=>{
-  const {id} =req.params;
-  const user= await User.findById(id)
-  res.json({
-     user});
+app.get('/project/by/:user',async (req,res)=>{
+    let user= req.params.user;
+   // findOne({email : body.email}
+    Project.findOne({user:user}  , (err,projectDB)=>{
+        if (err) {
+            return res.status(400).json({
+                ok : false ,
+                err
+            })
+        }
+        res.json({
+            project:projectDB
+        });
+
+    })
+    
 });
 
 module.exports=app;

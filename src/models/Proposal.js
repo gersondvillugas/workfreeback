@@ -12,7 +12,7 @@ var proposalSchema = new Schema({
 
     //orderDate: { type: Date, default: Date.now() },
     timerequired:{type:String,required:true},
-    budget:{type:Number,required:false},
+    budget:{type:String,required:true},
     img:{
         type:String ,
         require :false}
